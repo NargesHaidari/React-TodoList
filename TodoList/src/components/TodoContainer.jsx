@@ -5,14 +5,23 @@ import { v4 as uuidv4 } from "uuid";
 
 export default function TodoContainer(){
 
-    let a = uuidv4()
-    console.log(a)
-
     let [todos , setTodos] = useState([
         {id : uuidv4() , name: 'Eating breakfast', status : false},
         {id : uuidv4() , name: 'Going to gym', status : false},
         {id : uuidv4() , name: 'Watching movie', status : false},
     ])
+
+    function handleStatus(todo){
+        let updatedTodos = todos.map(
+            (item)=>{
+                if(item.id == todo.id){
+                    item.status = !item.status;
+                }
+                return item
+            }
+        )
+        setTodos(updatedTodos)
+    }
 
     function handleInput(){
 
@@ -28,6 +37,13 @@ export default function TodoContainer(){
         
     }
 
+    function handleDelete(todo){
+        let updatedTodos = todos.filter(
+            item => item.id != todo.id
+        )
+        setTodos(updatedTodos)
+    }
+
     return (
         <div className="shadow-md inline-flex flex-col px-6 py-6 bg-white w-[600px] gap-6">
 
@@ -36,7 +52,7 @@ export default function TodoContainer(){
             <input type="text" placeholder="What needs to be done today?" onKeyDown={handleInput} className="
             border border-gray-400 py-1 px-2 rounded-md text-sm outline-none"/>
 
-            <TodoList todos={todos} />
+            <TodoList todos={todos} handleStatus={handleStatus} handleDelete={handleDelete}/>
 
         </div>
     )

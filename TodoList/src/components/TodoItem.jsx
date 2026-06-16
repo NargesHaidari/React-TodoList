@@ -1,15 +1,13 @@
-import { useState } from "react";
+
 import TodoActions from "./TodoActions";
 
-export default function TodoItem({todo}){
-
-    let [check, setCheck] = useState(false)
+export default function TodoItem({todo , handleStatus , handleDelete}){
 
     return(
         <li className="flex relative gap-1 border-b py-4" >
-            <input type="checkbox" checked={check} onChange={()=>setCheck(check ? false : true)}/>
-            <p className={`${check ? "line-through" : ""}`}>{todo.name}</p>
-            <TodoActions/>
+            <input type="checkbox" checked={todo.status} onChange={()=>{handleStatus(todo)}}/>
+            <p className={`${todo.status ? "line-through" : ""}`}>{todo.name}</p>
+            <TodoActions handleDelete ={handleDelete} todo={todo} />
         </li>
     )
 }
