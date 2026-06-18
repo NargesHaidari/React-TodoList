@@ -23,7 +23,7 @@ export default function TodoContainer(){
         setTodos(updatedTodos)
     }
 
-    function handleInput(){
+    function handleInput(event){
 
         if(event.target.value == ""){
             return;

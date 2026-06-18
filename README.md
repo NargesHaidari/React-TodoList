@@ -17,7 +17,7 @@ This project is created for practicing React fundamentals such as component-base
 
 ## Planned Features
 
-* Edit existing tasks
+* Edit existing tasks (in progress)
 
 ## Tech Stack
 
