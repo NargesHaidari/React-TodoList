@@ -2,9 +2,9 @@
 
 A simple TodoList application built with React, Vite, Tailwind CSS, and UUID for unique task identification.
 
-This project is created for practicing React fundamentals such as component-based architecture, state management, event handling, and dynamic UI updates.
+This project demonstrates React fundamentals such as component-based architecture, state management, event handling, and dynamic UI updates.
 
-## Current Features
+## Features
 
 * TodoList UI completed
 * Component-based structure implemented
@@ -14,10 +14,7 @@ This project is created for practicing React fundamentals such as component-base
 * Delete task functionality implemented
 * Mark tasks as completed using a checkbox
 * Completed tasks display with a strikethrough style
-
-## Planned Features
-
-* Edit existing tasks (in progress)
+* Edit existing tasks implemented
 
 ## Tech Stack
 

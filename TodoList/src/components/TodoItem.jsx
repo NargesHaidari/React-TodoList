@@ -2,13 +2,14 @@
 import { useState } from "react";
 import TodoActions from "./TodoActions";
 
-export default function TodoItem({todo , handleStatus , handleDelete}){
+export default function TodoItem({todo , handleStatus , handleDelete, handleChange}){
 
     let [edit, setEdit] = useState(false);
 
     function closeInput(event){
         if(event.key == "Enter"){
-            setEdit(false)
+            handleChange(todo.id , event.target.value);
+            setEdit(false);
         }
     }
 

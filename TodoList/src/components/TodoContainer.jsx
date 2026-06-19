@@ -44,6 +44,20 @@ export default function TodoContainer(){
         setTodos(updatedTodos)
     }
 
+    function handleChange(todoId, newName){
+        let updateTodos = todos.map(
+            (item)=>{
+                if(item.id == todoId){
+                    item.name = newName;
+                    return item 
+                }else{
+                    return item
+                }
+            }
+        )
+        setTodos(updateTodos)
+    }
+
     return (
         <div className="shadow-md inline-flex flex-col px-6 py-6 bg-white w-[600px] gap-6">
 
@@ -52,7 +66,7 @@ export default function TodoContainer(){
             <input type="text" placeholder="What needs to be done today?" onKeyDown={handleInput} className="
             border border-gray-400 py-1 px-2 rounded-md text-sm outline-none"/>
 
-            <TodoList todos={todos} handleStatus={handleStatus} handleDelete={handleDelete}/>
+            <TodoList todos={todos} handleStatus={handleStatus} handleDelete={handleDelete} handleChange={handleChange} />
 
         </div>
     )
