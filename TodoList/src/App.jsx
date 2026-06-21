@@ -1,9 +1,12 @@
 
 import TodoContainer from "./components/TodoContainer"
+import { AppDataProvider } from "./components/NewContext"
 
 export default function App(){
     return (
-        <TodoContainer />
+        <AppDataProvider>
+            <TodoContainer />
+        </AppDataProvider>
     )
 }
 

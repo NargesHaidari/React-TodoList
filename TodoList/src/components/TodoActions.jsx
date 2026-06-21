@@ -1,6 +1,10 @@
+import { useContext } from "react"
+import { NewContext } from "./NewContext"
 
 
-export default function TodoActions ({todo , handleDelete, setEdit}){
+export default function TodoActions ({todo, setEdit}){
+
+    let {handleDelete} = useContext(NewContext)
 
     return (
         <div className="absolute right-0 flex gap-1">

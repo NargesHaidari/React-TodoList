@@ -1,12 +1,12 @@
 import TodoItem from "./TodoItem";
 
 
-export default function TodoList({todos , handleStatus , handleDelete, handleChange}){
+export default function TodoList({todos}){
     return (
         <ul>
             {
             todos.map(
-                (todo) => <TodoItem todo={todo} key={todo.id} handleStatus={handleStatus} handleDelete={handleDelete} handleChange={handleChange} />
+                (todo) => <TodoItem todo={todo} key={todo.id} />
             )
             }
         </ul>
