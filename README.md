@@ -4,6 +4,10 @@ A simple TodoList application built with React, Vite, Tailwind CSS, and UUID for
 
 This project demonstrates React fundamentals such as component-based architecture, state management using Context API, event handling, and dynamic UI updates.
 
+## Screenshot
+
+![React TodoList](./src/assets/screenshots/screenshot.png)
+
 ## Features
 
 * TodoList UI completed
